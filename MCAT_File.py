@@ -48,7 +48,7 @@ class MCAT_Class:
                         return Dict.get(Request)
                     
     def a2(self):
-        
+        #Gauge narrowing
         if self.Class >= 6:
             if self.Chord == 31 and self.Gauge - self.GaugeMin > self.GaugeDelta:
                 a2 = self.GaugeDelta
@@ -111,7 +111,7 @@ class MCAT_Class:
                 return 0
     
     def a9(self):
-        #a4 - Repeated Surface
+        #a9 - Repeated Surface
         if self.Class >= 6:
             SurfaceRepeatTable = self.Table.SurfaceRepeatTable()
             return self.SearchTable(SurfaceRepeatTable,"Tolerance","Class",self.Class,"Chord",self.Chord)
@@ -131,7 +131,7 @@ class MCAT_Class:
                 a11 = 0
             return a11
         else:
-            Cant = 6 if self.HighCant else 5
+            Cant = 6 if self.HighCant else self.Cant
             Warp = self.SearchTable(self.WarpTable,"Tolerance","Class",self.Class,"Cant",Cant)
             if self.Surface > Warp and self.Chord <= 62:
                 a11 = self.Surface - Warp
@@ -168,11 +168,16 @@ class MCAT_Class:
         
 if __name__ == "__main__":
     #Test cases for individual amplitudes
-    Cant = [0,3,5]
-    TrackType = "Tanget"
-    Gauge = [56.5,57]
-    Class=[6,7,8,9]
-    Chord = [31,62,124]
+    # Cant = [0,3,5]
+    # TrackType = "Tanget"
+    # Gauge = [56.5,57]
+    # Class=[6,7,8,9]
+    # Chord = [31,62,124]
+    # Country = "US"
+    Cant = [0]
+    Gauge = [56.5]
+    Class=[2,3,4,5]
+    Chord = [31,62]
     Country = "US"
 
     # a2

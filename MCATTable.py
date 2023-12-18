@@ -12,10 +12,10 @@ from tabulate import tabulate
 class MCATTable:
     
     def __init__(self):
-        self.Cants = [5]
+        self.Cants = [6]
         self.Gauges = [56.5,57]
-        self.Chords = [31,62,124]
-        self.Classes = [6,7,8,9]
+        self.Chords = [31,62]
+        self.Classes = [3,4,5]
         self.Country = "US"
         
         
@@ -23,7 +23,7 @@ class MCATTable:
         
         for el in self.Cants:
             for g in self.Gauges:
-                if el == 0 and g == 57: continue
+                if el == 0 and g == 57 and self.Country == "US": continue
                 for ch in self.Chords:
                     Parameters = self.PrintTableSetup()
                     Headers = [""]
