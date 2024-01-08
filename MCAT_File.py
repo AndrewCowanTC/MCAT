@@ -123,7 +123,7 @@ class MCAT_Class:
         return self.SearchTable(self.SurfaceTable,"Tolerance","Class",self.Class,"Chord",self.Chord,"Cant",self.Cant)
     
     def a11(self):
-        #a10 - Single Surface
+        #a11 - Single Surface
         if self.Class >= 6:
             if self.Surface > self.Warp and self.Chord <= 62:
                 a11 = self.Surface - self.Warp

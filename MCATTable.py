@@ -12,7 +12,7 @@ from tabulate import tabulate
 class MCATTable:
     
     def __init__(self):
-        self.Cants = [6]
+        self.Cants = [5]
         self.Gauges = [56.5,57]
         self.Chords = [31,62]
         self.Classes = [3,4,5]
